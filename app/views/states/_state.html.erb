@@ -1,0 +1,38 @@
+<%= form_for(state) do |f| %>
+      
+
+    <% if state.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(state.errors.count, "error") %> prohibited
+          this guess from being saved:
+        </h2>
+        <ul>
+          <% state.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class = "jumbotron question">
+      <%= f.label state.name %> <br>
+      <%= f.text_field :guess, :style => 'text-align: center;'  %>
+
+       <div class="form-group" style = "margin-left: 10px;">
+         <br>
+         <%= f.submit "Save answer", class: 'btn btn-success' %>
+       </div>
+
+    </div>
+ 
+    <div class = "container">
+      <p class = "arrow-loc"><%= link_to " ", state.prev, class: "glyphicon glyphicon-arrow-left" %>
+      <%= link_to " ", state.next, class: "glyphicon glyphicon-arrow-right shift-left" %>
+      </p>
+    </div>
+    
+    <%= link_to "End quiz", states_answered_path, class: "btn btn-default submit-loc" %>
+
+
+  <% end %>

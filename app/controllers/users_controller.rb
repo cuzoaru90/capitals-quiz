@@ -14,6 +14,7 @@ class UsersController < ApplicationController
  
      if @user.save
        flash[:notice] = "Welcome to the World Capitals Quiz #{@user.name}!"
+       create_session(@user)
        redirect_to root_path
      else
        flash.now[:alert] = "Could not create your account. Please try again."

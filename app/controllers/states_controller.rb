@@ -2,6 +2,7 @@ class StatesController < ApplicationController
 
  before_action :require_sign_in
  before_action :authorize_user
+ before_action :check_submission
 
 
   ## Controllers for each region/continent
@@ -88,6 +89,9 @@ class StatesController < ApplicationController
     @correct_answers = State.where({correct_answer: true})
     @num_correct_answers = @correct_answers.length
 
+    @user = current_user
+    @user.update_attributes(submitted_quiz: true)
+
     @states.update_all(guess: "", correct_answer: false)
 
   end
@@ -109,7 +113,14 @@ class StatesController < ApplicationController
   def authorize_user
     unless current_user.test_taker?
       flash[:alert] = "You must be signed up to take the quiz."
-      redirect_to topics_path
+      redirect_to root_path
+    end
+  end
+
+  def check_submission
+    if current_user.submitted_quiz?
+      flash[:alert] = "You already submitted the quiz. You may not retake it."
+      redirect_to root_path
     end
   end
 

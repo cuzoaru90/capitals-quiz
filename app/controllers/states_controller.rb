@@ -1,7 +1,10 @@
 class StatesController < ApplicationController
 
+ before_action :require_sign_in
+ before_action :authorize_user
+
+
   ## Controllers for each region/continent
- 
   def africa
      @african_states = State.where({region: 'Africa'})
   end
@@ -93,6 +96,21 @@ class StatesController < ApplicationController
  
   def state_params
     params.require(:state).permit(:guess, :correct_answer)
+  end
+
+
+  def require_sign_in
+    unless current_user
+      flash[:alert] = "You must be logged in to take quiz"
+      redirect_to new_session_path
+    end
+  end
+   
+  def authorize_user
+    unless current_user.test_taker?
+      flash[:alert] = "You must be signed up to take the quiz."
+      redirect_to topics_path
+    end
   end
 
 

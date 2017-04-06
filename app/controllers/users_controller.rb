@@ -13,7 +13,7 @@ class UsersController < ApplicationController
      @user.submitted_quiz = params[:user][:submitted_quiz]
  
      if @user.save
-       flash[:notice] = "Welcome to the World Capitals Quiz #{@user.name}!"
+       flash[:notice] = "Welcome to the World Capitals Quiz,  #{@user.name}!"
        create_session(@user)
        redirect_to root_path
      else

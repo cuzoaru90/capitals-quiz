@@ -73,6 +73,7 @@ class StatesController < ApplicationController
     @state = State.find(params[:id])
     @state.update_attributes(state_params)
 
+    current_user.update_attributes(saved_an_answer: true)
 
     if @state.save
        flash[:notice] = "Saved the answer."

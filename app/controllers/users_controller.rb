@@ -10,8 +10,10 @@ class UsersController < ApplicationController
      @user.email = params[:user][:email]
      @user.password = params[:user][:password]
      @user.password_confirmation = params[:user][:password_confirmation]
-     @user.submitted_quiz = params[:user][:submitted_quiz]
- 
+     @user.submitted_quiz = false
+     @user.saved_an_answer = false
+
+
      if @user.save
        flash[:notice] = "Welcome to the World Capitals Quiz,  #{@user.name}!"
        create_session(@user)

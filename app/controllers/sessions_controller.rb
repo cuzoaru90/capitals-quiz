@@ -28,7 +28,6 @@ class SessionsController < ApplicationController
       destroy_session(current_user)
       flash[:notice] = "You logged out with submitting your saved answers, so your quiz results are treated
         as zero. You may not take it again when you log in."
-        current_user.de
       redirect_to root_path
     else
       destroy_session(current_user)

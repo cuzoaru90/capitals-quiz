@@ -6,5 +6,9 @@ module ApplicationHelper
 
     content_tag :div, capture(&block), class: css_class
   end
+
+  def submitted_quiz
+    User.find_by(id: session[:user_id]).submitted_quiz
+  end
   
 end

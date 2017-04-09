@@ -23,7 +23,8 @@ body{
 }
 
 .container{
-  background-color: #C0C0C0;
+  text-align: center;
+  align-content: center;
 }
 
 .silver{
@@ -46,7 +47,7 @@ body{
   font-size: 14px;
   display: inline-block;
   color: black;
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
   text-decoration: none;
 }
 
@@ -64,19 +65,21 @@ body{
 #timer{
   margin-left: 35%;
   font-size: 16px;
-  font-family: Impact, Charcoal, sans-serif;
+  font-weight: bold;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
 }
 
 .world-section{
   height: 500px;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
   background-image: image-url('earth_day.jpg');
   background-size: cover;
 }
 
-.signup-section{
-  height: 300px;
+.info-section{
+  height: 500px;
   background-size: cover;
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
   background: #C0C0C0;
 }
 

@@ -3,13 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.question{ 
-  margin-left: 25%;  
+.question{   
   margin-top: 15%;
-  color: green;
+  margin-left: 15%;
   padding: 10px;
+  width: 50%;
   font-size: 12px;
-  width: 30%;
   border-radius: 25px;
   text-align: center;
   align-content: center;
@@ -29,11 +28,11 @@
 }
 
 .arrow-loc{
-  margin-left: 37%;
+  margin-right: 20%;
 }
 
 .submit-loc{
-  margin-left: 37%;
+   margin-right: 20%;
 }
 
 .btn-default{

@@ -15,11 +15,14 @@
       </div>
     <% end %>
   
+
+    <div class = "container">
+      
     <div class = "jumbotron question">
       <%= f.label state.name %> <br>
-      <%= f.text_field :guess, :style => 'text-align: center;'  %>
+      <%= f.text_field :guess, :style => 'text-align: center width: 30%;'  %>
 
-       <div class="form-group" style = "margin-left: 10px;">
+       <div class="form-group">
          <br>
          <%= f.submit "Save answer", class: 'btn btn-success' %>
        </div>
@@ -33,6 +36,8 @@
     </div>
     
     <%= link_to "End quiz", states_answered_path, class: "btn btn-default submit-loc" %>
+
+  </div>
 
 
   <% end %>

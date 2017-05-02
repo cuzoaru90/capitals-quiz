@@ -16,11 +16,11 @@
 //= require bootstrap
 //= require_tree .
 
-$(document).ready(function() {
 
+function countDown() {
 
 // New date is twenty minutes from now
-var countDownDate = new Date().getTime() + 20 * 60 * 1000;
+var countDownDate = new Date().getTime() + 1 * 60 * 1000;
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -45,8 +45,17 @@ var x = setInterval(function() {
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("timer").innerHTML = "EXPIRED";
+           
     }
 }, 1000);
 
+}
+
+
+
+$(document).ready(function() {
+
+// $("p").click(countDown);
 
 });
+

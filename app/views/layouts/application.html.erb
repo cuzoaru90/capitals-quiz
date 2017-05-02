@@ -10,8 +10,6 @@
 <body>
 
 
-    <div class="section silver">
-
       <% if flash[:notice] %>
        <div class="alert alert-success">
          <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -23,26 +21,6 @@
          <%= flash[:alert] %>
        </div>
      <% end %>
-
-
-      <ul class = "nav nav-tabs">
-        <li><%= link_to "Home", welcome_index_path%> </li>
-        <li class = "shift-right"><%= link_to "Africa", states_africa_path %></li>
-        <li><%= link_to "Asia", states_asia_path%></li>
-        <li><%= link_to "Central America", states_central_america_path%></li>
-        <li><%= link_to "Europe", states_europe_path%></li>
-        <li><%= link_to "North America", states_north_america_path%></li>
-        <li><%= link_to "Oceania", states_oceania_path%></li>
-        <li><%= link_to "South America", states_south_america_path%></li>
-
-         
-         <% if current_user %>
-           <li class = "shift-right"> <p> Welcome,  <%= current_user.name%></p> <%= link_to "Sign Out", session_path(current_user), method: :delete %> </li>
-         <% else %>
-           <li class = "shift-right"><%= link_to "Sign up", new_user_path%></li>
-           <li> <%= link_to "Sign In", new_session_path %> </li>
-         <% end %>
-
 
       </ul>
     </div>

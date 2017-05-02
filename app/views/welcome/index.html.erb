@@ -1,8 +1,8 @@
-<div class="world-section">
+<!-- <div class="world-section">
   <p class = "landing">Test your Geographical <br> Knowledge!<p>
-</div>
+</div> -->
 
-<div class="info-section">
+<!-- <div class="info-section">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-4 shift-down" style = "text-align: center;"> <br><br>
@@ -17,4 +17,39 @@
                     </div>
                 </div>
             </div>
-</div>
+</div> -->
+
+<div id="conteneur">
+      <div id="header">World Quiz</div>
+      
+      <div id="haut">
+      <ul class="menuhaut">
+        <li><%= link_to "Africa", states_africa_path%></li>
+        <li><%= link_to "Asia", states_asia_path%></li>
+        <li><%= link_to "Central America", states_central_america_path%></li>
+        <li><%= link_to "Europe", states_europe_path%></li>
+        <li><%= link_to "North America", states_north_america_path%></li>
+        <li><%= link_to "Oceania", states_oceania_path%></li>
+        <li><%= link_to "South America", states_south_america_path%></li>
+
+        <% if current_user %>
+           <li> <p style = "color: white;"> Welcome,  <%= current_user.name%> <%= link_to "Sign Out", session_path(current_user), method: :delete %> </p></li>
+         <% else %>
+           <li><%= link_to "Sign up", new_user_path%></li>
+           <li> <%= link_to "Sign In", new_session_path %> </li>
+         <% end %>
+
+      </ul>
+      </div>
+
+      <div id="centre">
+      <h1>Test your geographical knowledge!</h1>
+
+        <h2>Objective</h2>
+          <p>This is a quiz where you will be asked for the capitals of countries across the world's continents.</p>
+          <p>Choose a region of the world from the navbar, and answer a series of questions where you fill in the blank with the capital city of that country/state.</p>
+          <h2>Instructions</h2>
+          <p>When you sign-up for this quiz, you get one chance to submit your answers. Once you click the submit button, you're done. You lose access to the questions, and you will receive an email of your results.</p>
+      </div>
+    <div id="pied"></div>
+  </div>

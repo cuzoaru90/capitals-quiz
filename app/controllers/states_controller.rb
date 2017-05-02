@@ -51,6 +51,7 @@ class StatesController < ApplicationController
   def show
     @state =  State.find(params[:id])
     @answered = @state.correct_answer
+    @time = Time.now
   end
 
 

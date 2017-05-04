@@ -19,28 +19,7 @@
             </div>
 </div> -->
 
-<div id="conteneur">
-      <div id="header">World Quiz</div>
-      
-      <div id="haut">
-      <ul class="menuhaut">
-        <li><%= link_to "Africa", states_africa_path%></li>
-        <li><%= link_to "Asia", states_asia_path%></li>
-        <li><%= link_to "Central America", states_central_america_path%></li>
-        <li><%= link_to "Europe", states_europe_path%></li>
-        <li><%= link_to "North America", states_north_america_path%></li>
-        <li><%= link_to "Oceania", states_oceania_path%></li>
-        <li><%= link_to "South America", states_south_america_path%></li>
-
-        <% if current_user %>
-           <li> <p style = "color: white;"> Welcome,  <%= current_user.name%> <%= link_to "Sign Out", session_path(current_user), method: :delete %> </p></li>
-         <% else %>
-           <li><%= link_to "Sign up", new_user_path%></li>
-           <li> <%= link_to "Sign In", new_session_path %> </li>
-         <% end %>
-
-      </ul>
-      </div>
+<div id="conteneur" style = "width:100%; margin: 0;">
 
       <div id="centre">
       <h1>Test your geographical knowledge!</h1>

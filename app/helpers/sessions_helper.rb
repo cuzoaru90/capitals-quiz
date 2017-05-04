@@ -1,7 +1,8 @@
 module SessionsHelper
 
-  def create_session(user)
+   def create_session(user)
      session[:user_id] = user.id
+     user.update_attributes(signed_in_at: Time.now)
    end
  
    def destroy_session(user)

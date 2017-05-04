@@ -25,10 +25,15 @@ body{
 .container{
   text-align: center;
   align-content: center;
+  display:inline-block;
+  position:relative;
+  margin:0px;
+  width:35%;
+  height:50%;
 }
 
-.silver{
-  background-color: #C0C0C0;
+.small-text{
+  font-size: 10px;
 }
 
 .shift-right{
@@ -37,11 +42,6 @@ body{
 
 .shift-down{
   margin-top: 10%;
-}
-
-.home{
-  color: black;
-  font-size: 24px;
 }
 
 .nav-tabs > li > a, .nav-tabs > li > p{
@@ -69,30 +69,3 @@ body{
   font-weight: bold;
   font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
 }
-
-.world-section{
-  height: 500px;
-  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
-  background-image: image-url('earth_day.jpg');
-  background-size: cover;
-}
-
-.info-section{
-  height: 500px;
-  background-size: cover;
-  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
-  background: #C0C0C0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-

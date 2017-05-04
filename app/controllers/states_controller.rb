@@ -51,7 +51,6 @@ class StatesController < ApplicationController
   def show
     @state =  State.find(params[:id])
     @answered = @state.correct_answer
-    @time = Time.now
   end
 
 
@@ -78,7 +77,6 @@ class StatesController < ApplicationController
 
     if @state.save
        flash[:notice] = "Saved the answer."
-       redirect_to [@state]
      else
        flash.now[:alert] = "Couldn't save your answer. Please try again."
        render :show
@@ -89,10 +87,12 @@ class StatesController < ApplicationController
   def answered
     @states = State.all
     @correct_answers = State.where({correct_answer: true})
-    @num_correct_answers = @correct_answers.length
+    @num_correct_answers = @correct_answers.length 
 
     @user = current_user
     @user.update_attributes(submitted_quiz: true)
+
+    @quiz_time = (Time.now - @user.signed_in_at).to_i
 
     @states.update_all(guess: "", correct_answer: false)
 

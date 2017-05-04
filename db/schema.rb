@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411232540) do
+ActiveRecord::Schema.define(version: 20170504023544) do
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170411232540) do
     t.datetime "updated_at",      null: false
     t.integer  "role"
     t.boolean  "saved_an_answer"
-    t.boolean  "started_quiz"
+    t.datetime "signed_in_at"
   end
 
 end

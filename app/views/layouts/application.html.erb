@@ -23,17 +23,14 @@
      <% end %>
 
       </ul>
-    </div>
+    </div>  
 
-    <% if current_user && !submitted_quiz%>
-      <p id="timer"></p>
-    <% end %>
+  <div id="header">World Quiz</div>
 
-    <div id="header">World Quiz</div>
-      
-      <div id="haut">
-      <ul class="menuhaut">
-        <li><%= link_to "Home", welcome_index_path%></li>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class = "color: white;"><%= link_to "Home", welcome_index_path%></li>
         <li><%= link_to "Africa", states_africa_path%></li>
         <li><%= link_to "Asia", states_asia_path%></li>
         <li><%= link_to "Central America", states_central_america_path%></li>
@@ -43,22 +40,24 @@
         <li><%= link_to "South America", states_south_america_path%></li>
 
         <% if current_user %>
-           <li> <p style = "color: white;"> Welcome,  <%= current_user.name%> <%= link_to "Sign Out", session_path(current_user), method: :delete %> </p></li>
-
+          <li><%= link_to "Welcome, " + current_user.name, '#', 
+           class:"welcome"%> </li>
+          <li><%= link_to "Sign Out", session_path(current_user), method: :delete %> </li>
             <% if !submitted_quiz%>
               <li> <%= link_to "End quiz", states_answered_path%> </li>
             <% end %>
 
-         <% else %>
-           <li><%= link_to "Sign up", new_user_path%></li>
-           <li><%= link_to "Sign In", new_session_path %> </li>
-         <% end %>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_path%></li>
+          <li><%= link_to "Sign In", new_session_path %> </li>
+        <% end %>
 
       </ul>
-      </div>
+    </div>
+  </nav>
 
 
-   <%= yield %>
+  <%= yield %>
 
 
 </body>

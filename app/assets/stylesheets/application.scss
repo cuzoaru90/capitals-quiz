@@ -28,7 +28,7 @@ body{
   display:inline-block;
   position:relative;
   margin:0px;
-  width:35%;
+  width:30%;
   height:50%;
 }
 
@@ -44,23 +44,21 @@ body{
   margin-top: 10%;
 }
 
-.nav-tabs > li > a, .nav-tabs > li > p{
-  font-size: 14px;
-  display: inline-block;
-  color: black;
-  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
-  text-decoration: none;
+.navbar{
+  background: #202020;
+  color: #fff;
 }
 
-.nav-tabs > li > a:hover{
-  text-decoration: none;
-  background-color: transparent;
-  position: relative;
+.nav > li > a, .welcome:hover {
+   color: #fff !important;
 }
 
-.nav-tabs > li > a:focus{
-  opacity: 1.0;
-  box-shadow: none;
+.nav > li > a:hover {
+   color: gray !important;
+}
+
+.nav > li > .welcome:hover{
+  color: #fff !important;
 }
 
 #timer{

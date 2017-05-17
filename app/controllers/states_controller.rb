@@ -76,7 +76,7 @@ class StatesController < ApplicationController
     current_user.update_attributes(saved_an_answer: true)
 
     if @state.save
-       flash[:notice] = "Saved the answer."
+       # flash[:notice] = "Saved the answer."
      else
        flash.now[:alert] = "Couldn't save your answer. Please try again."
        render :show
@@ -128,4 +128,5 @@ class StatesController < ApplicationController
 
 
 
-end ## End of controller
+end 
+## End of controller
